@@ -10,5 +10,6 @@
 ## concepts used 
 - fetch API data
 - React hooks
+- functions
 - Array methods
 
