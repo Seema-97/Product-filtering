@@ -1,7 +1,7 @@
 # Sort the fetched data from API
 
 ## Libraries used
--React
+- <img src = './src/Images/react-logo.svg'>
 -MUI
 
 ## Languages used 
