@@ -15,5 +15,5 @@
 - conditionals
 
 ### link of API
-<a href = 'https://fakestoreapi.com/products'>
+<a href = 'https://fakestoreapi.com/products' > </a>
 
