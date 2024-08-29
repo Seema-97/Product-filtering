@@ -12,27 +12,67 @@ const api = 'https://fakestoreapi.com/products'
 const Products = () => {
 
     const [products , setProducts] = useState(null) ;
-    const[isproductRendered, setIsProductRendered] = useState(false);
+    // const[isproductRendered, setIsProductRendered] = useState(false);
     const [filterOptions, setFilterOptions] = useState('');
 
     const handleFilterOptions= (event) => {
-        setFilterOptions(event.target.value);
+        let optionValue = event.target.value 
+        setFilterOptions(optionValue);
 
-        if(event.target.value === '0-price'){
-            let sortedProduct = products.sort(
-                (a, b) => Number(a.price) - Number(b.price) );   
-          setProducts(sortedProduct)
+
+        switch (event.target.value) {
+            case '0-price' :
+                {
+                    let sortedProduct = products.sort( (a, b) => Number(a.price) - Number(b.price) );   
+                  setProducts(sortedProduct)
+                  break;
+        
+                }
+            case '1-price' :
+                {
+                    let sortedProduct = products.sort( (a, b) => Number(b.price) - Number(a.price) );   
+                    setProducts(sortedProduct)
+                    break;
+                } 
+             case '0-rating' :
+                {
+                    let sortedProduct = products.sort((a,b) => a.rating.rate - b.rating.rate);
+                    setProducts(sortedProduct)
+                    break;
+                }    
+             case '1-rating':
+                {
+                    let sortedProduct = products.sort((a,b) => b.rating.rate - a.rating.rate);
+                    setProducts(sortedProduct)
+                    break;
+                }
+
         }
-        else if(event.target.value === '1-price'){
-            let sortedProduct = products.sort(
-            (a, b) => Number(b.price) - Number(a.price))
-          setProducts(sortedProduct)
-        }
+
+        // if(optionValue === '0-price'){
+        //     let sortedProduct = products.sort(
+        //         (a, b) => Number(a.price) - Number(b.price) );   
+        //   setProducts(sortedProduct)
+        // }
+        // else if(optionValue === '1-price'){
+        //     let sortedProduct = products.sort(
+        //     (a, b) => Number(b.price) - Number(a.price))
+        //   setProducts(sortedProduct)
+        // }
+        // else if(optionValue === '0-rating'){
+        //     let sortedProduct = products.sort((a,b) => a.rating.rate - b.rating.rate);
+        //     setProducts(sortedProduct)
+        // }
+        // else if(optionValue === '1-rating'){
+        //     let sortedProduct = products.sort((a,b) => b.rating.rate - a.rating.rate);
+        //     setProducts(sortedProduct)
+        // }
+
     };
 
     const clearProducts = () => {
         setProducts(null);
-        setIsProductRendered(false);
+        // setIsProductRendered(false);
     }
 
     const fetchProducts = () =>{
@@ -40,7 +80,7 @@ const Products = () => {
         .then(res => res.json())
         .then(data => {
             setProducts(data);
-            setIsProductRendered(true);
+            // setIsProductRendered(true);
         })
    
    }
@@ -53,7 +93,7 @@ const Products = () => {
       <Box sx={{display:"flex" , alignItems:'center' , justifyContent:'center'}}>
       
 
-      {isproductRendered ? 
+      {products?.length > 0 ? 
         <Box sx={{display:"flex" , alignItems:'center' , justifyContent:'center' , gap:'40px'}}>
       <Button variant="contained" color='secondary' onClick={clearProducts} style={{margin:"auto"}}>Clear</Button> 
        <FormControl sx={{width:"200px"}}>
@@ -80,15 +120,15 @@ const Products = () => {
       <Box sx={{display:'flex' , flexWrap: 'wrap', gap:'15px', margin:'auto' , justifyContent:'center' , marginTop:'15px'}}>
       {products?.map(item => 
         <Fragment key={item.id}>
-     <Card sx={{width:'520px' , minHeight : '500px' , textAlign:'center'}}>
+     <Card sx={{width:'450px' , minHeight : '400px' , textAlign:'center'}}>
       <p className="title">${item.title}</p>
       <p className="price">${item.price}</p>
       <p className="description">${item.description}</p>
       <p className="category">${item.category}</p>
       <img src= {item.image} alt="" className="image" style={{width : 200 , height : 200 , objectFit: "contain"}} />
       <div className="rating">
-      <span>${item.rating.rate}</span> 
-      <span>${item.rating.count}</span>
+      <p>Rating : {item.rating.rate}</p> 
+      <p>Count:{item.rating.count}</p>
       </div>
       </Card>
         </Fragment>
