@@ -12,4 +12,5 @@
 - React hooks
 - functions
 - Array methods
+- conditionals
 
