@@ -1,8 +1,14 @@
-# React + Vite
+# This project is made on React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Libraries used
+-React
+-MUI
 
-Currently, two official plugins are available:
+## Languages used 
+-HTML, CSS , JS 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## concepts used 
+- fetch API data
+- React hooks
+- Array methods
+
