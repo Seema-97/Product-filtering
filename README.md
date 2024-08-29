@@ -1,4 +1,4 @@
-# This project is made on React
+# This project is made on React for sorting the products
 
 ## Libraries used
 -React
