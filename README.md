@@ -1,7 +1,7 @@
 # Sort the fetched data from API
 
 ## Libraries used
-- <img src = './react-logo.svg'>
+- <img src ='./react-logo.svg'>
 -MUI
 
 ## Languages used 
@@ -13,4 +13,7 @@
 - functions
 - Array methods
 - conditionals
+
+### link of API
+<a href = 'https://fakestoreapi.com/products'>
 
