@@ -13,7 +13,6 @@
 - functions
 - Array methods
 - conditionals
-
-### link of API
-<a href = 'https://fakestoreapi.com/products' > </a>
+  
+<a href = 'https://fakestoreapi.com/products' >link of API </a>
 
