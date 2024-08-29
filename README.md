@@ -1,4 +1,4 @@
-# This project is made on React for sorting the products
+# Sort the fetched data from API
 
 ## Libraries used
 -React
